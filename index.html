@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz@9..144&family=Montserrat&display=swap"
+    rel="stylesheet">
+
+  <title>Frontend Mentor | Product preview card component</title>
+
+
+  <style>
+    body {
+      background-color: hsl(30, 38%, 92%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 8%;
+    }
+
+    .product_picture {
+      float: left;
+      width: 425px;
+    }
+
+    .box {
+      display: inline-block;
+      overflow: hidden;
+      margin: auto;
+      border-radius: 2%;
+    }
+
+    .product {
+      position: relative;
+      background-color: white;
+      height: 537.5px;
+      width: 325px;
+      overflow: hidden;
+      padding: 50px;
+      color: hsl(228, 12%, 48%);
+      font-family: sans-serif;
+      line-height: 2;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: hsl(212, 21%, 14%);
+      line-height: 1;
+      font-family: serif;
+    }
+
+    .current_price {
+      color: hsl(158, 36%, 37%);
+      font-size: 3em;
+      font-family: fraunces;
+      font-weight: 700;
+    }
+
+    .old_price {
+      position: relative;
+      display: inline-block;
+      text-decoration: line-through;
+      padding-left: 25px;
+      margin-top: -200px;
+    }
+
+    .description {
+      letter-spacing: 1px;
+    }
+
+    .price {
+      position: relative;
+    }
+
+    .box button {
+      width: 300px;
+      height: 50px;
+      background-color: hsl(158, 36%, 37%);
+      color: hsl(0, 0%, 100%);
+      margin-left: 12.5px;
+      border-radius: 4%;
+      border-width: 0;
+      font-size: 1.2em;
+      font-weight: 700;
+    }
+
+    .box button:hover {
+      background-color: darkgreen;
+    }
+
+    .cart {
+      width: 20px;
+      height: auto;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="box">
+    <img class="product_picture" src="images/image-product-desktop.jpg" alt="">
+    <div class="product">
+      P E R F U M E
+
+      <h1>Gabrielle Essence Eau De Parfum</h1>
+
+      <span class="description">A floral, solar and voluptuous interpretation composed by Olivier Polge,
+        Perfumer-Creator for the House of CHANEL.</span>
+
+      <p class="price"><Span class="current_price">$149.99</Span> <span class="old_price">$169.99</span></p>
+
+      <button type="button"><img class="cart" src="images/shopping-cart.png">Add to Cart</button>
+
+    </div>
+  </div>
+
+</body>
+
+</html>
