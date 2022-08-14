@@ -2,123 +2,150 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz@9..144&family=Montserrat&display=swap"
-    rel="stylesheet">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- displays site properly based on user's device -->
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap">
+	<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
-  <title>Frontend Mentor | Product preview card component</title>
+	<title>Frontend Mentor | Product preview card component</title>
 
+	<style>
+		body {
+			background-color: hsl(30, 38%, 92%);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-height: 100vh;
+			margin: 0;
+		}
 
-  <style>
-    body {
-      background-color: hsl(30, 38%, 92%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: 8%;
-    }
+		.container {
+			overflow: hidden;
+			border-radius: 10px;
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			max-width: 350px;
+			background-color: white;
+		}
 
-    .product_picture {
-      float: left;
-      width: 425px;
-    }
+		.product-picture {
+			width: 350px;
+		}
 
-    .box {
-      display: inline-block;
-      overflow: hidden;
-      margin: auto;
-      border-radius: 2%;
-    }
+		.description {
+			font-family: 'Montserrat', sans-serif;
+			font-size: 0.9em;
+			color: hsl(228, 12%, 48%);
+			padding: 1.7em 1.7em;
+			line-height: 1.5;
+		}
 
-    .product {
-      position: relative;
-      background-color: white;
-      height: 537.5px;
-      width: 325px;
-      overflow: hidden;
-      padding: 50px;
-      color: hsl(228, 12%, 48%);
-      font-family: sans-serif;
-      line-height: 2;
-    }
+		.header {
+			font-size: 0.8em;
+			text-transform: uppercase;
+			letter-spacing: 0.5em;
+		}
 
-    h1 {
-      font-size: 3em;
-      color: hsl(212, 21%, 14%);
-      line-height: 1;
-      font-family: serif;
-    }
+		h1 {
+			color: hsl(212, 21%, 14%);
+			font-family: 'Fraunces', serif;
+			font-weight: 700;
+			line-height: 1;
+			margin: 0.5em 0;
+			font-size: 2.2em;
+		}
 
-    .current_price {
-      color: hsl(158, 36%, 37%);
-      font-size: 3em;
-      font-family: fraunces;
-      font-weight: 700;
-    }
+		table {
+			margin: 0.5em 0;
+		}
 
-    .old_price {
-      position: relative;
-      display: inline-block;
-      text-decoration: line-through;
-      padding-left: 25px;
-      margin-top: -200px;
-    }
+		.Price-new {
+			color: hsl(158, 36%, 37%);
+			font-size: 2em;
+			font-family: 'Fraunces', serif;
+			font-weight: 700;
+			font-size: 2.2em;
+		}
 
-    .description {
-      letter-spacing: 1px;
-    }
+		.Price-old {
+			vertical-align: middle;
+			text-decoration: line-through;
+			padding-left: 15px;
+			font-size: 0.9em;
+		}
 
-    .price {
-      position: relative;
-    }
+		button {
+			background-color: hsl(158, 36%, 37%);
+			color: white;
+			width: 100%;
+			padding: 15px 0;
+			font-size: 1.1em;
+			border: none;
+			border-radius: 10px;
+			font-weight: 500;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
 
-    .box button {
-      width: 300px;
-      height: 50px;
-      background-color: hsl(158, 36%, 37%);
-      color: hsl(0, 0%, 100%);
-      margin-left: 12.5px;
-      border-radius: 4%;
-      border-width: 0;
-      font-size: 1.2em;
-      font-weight: 700;
-    }
+		button:hover {
+			background-color: darkgreen;
+		}
 
-    .box button:hover {
-      background-color: darkgreen;
-    }
+		.Cart {
+			padding-right: 10px;
+		}
 
-    .cart {
-      width: 20px;
-      height: auto;
-      margin-right: 10px;
-    }
-  </style>
+		@media only screen and (min-width: 768px) {
+			.container {
+				flex-direction: row;
+				max-width: 700px;
+				max-height: 525px;
+			}
+
+			.description {
+				font-size: 1.1em;
+			}
+
+			h1 {
+				margin: 0.8em 0;
+			}
+
+			table {
+				margin: 0.8em 0;
+			}
+		}
+	</style>
 </head>
 
 <body>
+	<div class="container">
+		<picture>
+			<source media="(min-width: 768px)" srcset="images/image-product-desktop.jpg">
+			<img class="product-picture" src="images/image-product-mobile.jpg" alt="">
+		</picture>
+		<div class="description">
+			<div class="header">Perfume</div>
+			<h1>Gabrielle Essence Eau De Parfum</h1>
+			A floral, solar and voluptuous interpretation composed by Olivier Polge,
+			Perfumer-Creator for the House of CHANEL.
+			<table>
+				<tr>
+					<td>
+						<span class="Price-new">$149.99</span>
+					</td>
+					<td>
+						<span class="Price-old">$169.99</span>
+					</td>
+				</tr>
+			</table>
 
-  <div class="box">
-    <img class="product_picture" src="images/image-product-desktop.jpg" alt="">
-    <div class="product">
-      P E R F U M E
-
-      <h1>Gabrielle Essence Eau De Parfum</h1>
-
-      <span class="description">A floral, solar and voluptuous interpretation composed by Olivier Polge,
-        Perfumer-Creator for the House of CHANEL.</span>
-
-      <p class="price"><Span class="current_price">$149.99</Span> <span class="old_price">$169.99</span></p>
-
-      <button type="button"><img class="cart" src="images/shopping-cart.png">Add to Cart</button>
-
-    </div>
-  </div>
-
+			<button><img class="Cart" src="images/icon-cart.svg">Add to Cart</button>
+		</div>
+	</div>
 </body>
 
 </html>
